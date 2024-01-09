@@ -2,7 +2,6 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
 import com.B31G6_Sprint2_Fleet.pages.LoginPage;
-import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
 import com.B31G6_Sprint2_Fleet.utilities.ConfigurationReader;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
