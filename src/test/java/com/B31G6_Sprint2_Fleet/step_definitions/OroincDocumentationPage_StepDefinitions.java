@@ -34,18 +34,21 @@ public class OroincDocumentationPage_StepDefinitions {
     @Then("new page url should be https:\\/\\/doc.oroinc.com\\/")
     public void new_page_url_should_be_https_doc_oroinc_com() {
 
+
+        }
+
+    @Then("new page url should be https:\\/\\/doc.oroinc.com\\/")
+    public void newPageUrlShouldBeHttpsDocOroincCom() {
         for (String each : Driver.getDriver().getWindowHandles()) {
             Driver.getDriver().switchTo().window(each);
             BrowserUtils.sleep(1);}
-            String expectedURL="https://doc.oroinc.com/";
-            String actualURL=Driver.getDriver().getCurrentUrl();
-            Assert.assertEquals(expectedURL,actualURL);
-        }
+        String expectedURL="https://doc.oroinc.com/";
+        String actualURL=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedURL,actualURL);
+    }
 
 
-
-
-      //List<String > windowdHandles= Driver.getDriver().getWindowHandles();
+    //List<String > windowdHandles= Driver.getDriver().getWindowHandles();
 
     }
 
