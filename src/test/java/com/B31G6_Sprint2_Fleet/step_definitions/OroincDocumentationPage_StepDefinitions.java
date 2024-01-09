@@ -33,8 +33,6 @@ public class OroincDocumentationPage_StepDefinitions {
     }
 
 
-
-
     @Then("new page url should be https:\\/\\/doc.oroinc.com\\/")
     public void newPageUrlShouldBeHttpsDocOroincCom() {
         for (String each : Driver.getDriver().getWindowHandles()) {
