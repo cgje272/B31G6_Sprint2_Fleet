@@ -1,13 +1,25 @@
 package com.B31G6_Sprint2_Fleet.step_definitions;
 
+import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
+import com.B31G6_Sprint2_Fleet.utilities.ConfigurationReader;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-public class Hooks {
+import java.time.Duration;
 
+public class Hooks {
+    //import the @Before coming from io.cucumber.java
+    @Before(order = 1)
+    public void setupMethod(){
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
     @After
     public void teardownMethod(Scenario scenario){
         // we are using byte for syntax (documentation on how to take screenshot)
@@ -18,6 +30,12 @@ public class Hooks {
              byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
              scenario.attach(screenshot, "image/png", scenario.getName());
          }
-        Driver.closeDriver();
+
+        BrowserUtils.sleep(2);
+         Driver.closeDriver();
     }
+    //@Before (value = "@login", order = 2 )
+    //public void login_scenario_before(){
+     //   System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
+    //}
 }
