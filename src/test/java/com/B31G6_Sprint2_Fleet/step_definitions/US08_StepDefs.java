@@ -3,26 +3,30 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 import com.B31G6_Sprint2_Fleet.pages.CalendarEventsPage;
 import com.B31G6_Sprint2_Fleet.pages.CreateCalendarEventPage;
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
+import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 
 public class US08_StepDefs extends HomePage {
     Actions actions = new Actions(Driver.getDriver());
-    HomePage homePage;
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
     CreateCalendarEventPage createCalendarEventPage = new CreateCalendarEventPage();
 
+
     @When("user hovers over Activities")
     public void user_hovers_over_activities() {
-        actions.moveToElement(homePage.activities).perform();
+        actions.moveToElement(this.activities).perform();
     }
 
     @When("clicks Calendar Events")
     public void clicks_calendar_events() {
-        homePage.calendarEvents.click();
+       actions.moveToElement(this.calendarEvents).click().perform();
+        BrowserUtils.sleep(5);
     }
 
     @When("clicks Create Calendar Event")
@@ -38,7 +42,8 @@ public class US08_StepDefs extends HomePage {
     @Then("user should see number {int} displayed by default in the Days space")
     public void user_should_see_number_displayed_by_default_in_the_days_space(Integer int1) {
         String expectedResult=""+int1;
-        String actualResult= createCalendarEventPage.daysInputBox.getText();
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
+        String actualResult = (String) jsExecutor.executeScript("return arguments[0].value;", createCalendarEventPage.daysInputBox);
 
         Assert.assertEquals(expectedResult,actualResult);
     }
