@@ -17,4 +17,7 @@ public class CreateCalendarEventPage {
 
     @FindBy(xpath = "//span[.='day(s)']/preceding-sibling::input[1]")
     public WebElement daysInputBox;
+
+    @FindBy(xpath = "//span[.='This value should not be blank.']")
+    public WebElement thisValueShouldNotBeBlank_ErrorMessage;
 }
