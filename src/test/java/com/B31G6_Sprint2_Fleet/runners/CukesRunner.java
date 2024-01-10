@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         },
         features="src/test/resources/features",
         glue="com/B31G6_Sprint2_Fleet/step_definitions",
-        dryRun = false,
-        tags = "@wipUS#",
+        dryRun = true,
+        tags = "@wipUS#08",
         publish = true
 )
 public class CukesRunner {
