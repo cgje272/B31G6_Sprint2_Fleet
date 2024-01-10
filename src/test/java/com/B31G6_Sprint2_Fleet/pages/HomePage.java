@@ -41,11 +41,11 @@ public abstract class HomePage {
     public WebElement  sales;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[12]")
     public WebElement  oportunities;
-    @FindBy (xpath = "(//span[@class='title title-level-1'])[5]")
+    @FindBy (xpath = "(//span[@class='title title-level-1'])[3]")
     public WebElement  activities;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[13]")
     public WebElement  calls;
-    @FindBy (xpath = "(//span[@class='title title-level-2'])[14]")
+    @FindBy (xpath = "(//span[@class='title title-level-2'])[9]")
     public WebElement  calendarEvents;
     @FindBy (xpath = "(//span[@class='title title-level-1'])[6]")
     public WebElement marketing;
@@ -59,5 +59,6 @@ public abstract class HomePage {
 
     @FindBy (xpath = "//a[@href='/pinbar/help']")
     public WebElement pinbarLink;
+
 
 }
