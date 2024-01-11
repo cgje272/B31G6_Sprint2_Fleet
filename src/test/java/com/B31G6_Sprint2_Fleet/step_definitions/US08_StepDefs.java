@@ -31,7 +31,7 @@ public class US08_StepDefs extends HomePage {
     @When("clicks Calendar Events")
     public void clicks_calendar_events() {
         actions.moveToElement(this.calendarEvents).click().perform();
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(15);
     }
 
     @When("clicks Create Calendar Event")
