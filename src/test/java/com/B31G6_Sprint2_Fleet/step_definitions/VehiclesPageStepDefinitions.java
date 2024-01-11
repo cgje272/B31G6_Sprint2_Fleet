@@ -6,6 +6,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class VehiclesPageStepDefinitions {
+    @Given("the user is on the login page")
+    public void theUserIsOnTheLoginPage() {
+    }
 
     @Given("user is on the main page")
     public void user_is_on_the_main_page() {
@@ -17,12 +20,10 @@ public class VehiclesPageStepDefinitions {
 
 
     }
+
     @Then("user can see all checkboxes as unchecked")
     public void user_can_see_all_checkboxes_as_unchecked() {
 
     }
-
-
-
 
 }

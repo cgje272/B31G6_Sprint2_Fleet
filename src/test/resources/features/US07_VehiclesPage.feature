@@ -6,6 +6,9 @@ Feature: Vehicles page feature
   AC #2: Verify that users can check the first checkbox to select all the cars
   AC #3: Verify that users can select any car
 
+  Background:
+    Given the user is on the login page
+
 
   Scenario: Search result vehicles page verification
     Given user is on the main page
