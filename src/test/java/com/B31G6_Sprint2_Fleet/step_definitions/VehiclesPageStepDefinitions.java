@@ -19,6 +19,8 @@ public class VehiclesPageStepDefinitions {
     public void user_selects_vehicles_page() {
 
 
+
+
     }
 
     @Then("user can see all checkboxes as unchecked")
