@@ -1,8 +1,13 @@
 package com.B31G6_Sprint2_Fleet.pages;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public abstract class HomePage {
 
@@ -60,4 +65,19 @@ public abstract class HomePage {
     @FindBy (xpath = "//a[@href='/pinbar/help']")
     public WebElement pinbarLink;
 
+    @FindBy(css = "div[class='loader-mask shown']")
+    @CacheLookup
+    public WebElement loaderMask;
+
+
+    public void waitUntilLoaderScreenDisappear() {
+
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }
