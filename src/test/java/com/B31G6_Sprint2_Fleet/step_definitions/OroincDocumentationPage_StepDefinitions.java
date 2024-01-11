@@ -9,25 +9,25 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
-public class OroincDocumentationPage_StepDefinitions {
+public class OroincDocumentationPage_StepDefinitions extends HomePage {
     LoginPage loginPage=new LoginPage();
-    HomePage homePage=new HomePage();
 
-    @Given("user is on the XFLEET login page")
-    public void user_is_on_the_xfleet_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("fleeturl"));
-    }
+
+
 
     @When("user login with below credentials {string},{string}")
     public void user_login_with_below_credentials(String string, String string2) {
+     Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     loginPage.login(string,string2);
 
     }
     @When("user clicks on the question mark icon")
     public void user_clicks_on_the_question_mark_icon() {
-        homePage.oroinclLink.click();
+
+        this.oroinclLink.click();
 
     }
 
