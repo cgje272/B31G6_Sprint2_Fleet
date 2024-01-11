@@ -1,5 +1,6 @@
 package com.B31G6_Sprint2_Fleet.step_definitions;
 
+import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,6 +18,7 @@ public class VehiclesPageStepDefinitions {
     }
     @When("user selects Vehicles page")
     public void user_selects_vehicles_page() {
+
 
 
 
