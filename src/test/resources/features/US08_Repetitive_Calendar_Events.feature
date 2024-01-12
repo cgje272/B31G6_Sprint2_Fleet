@@ -21,7 +21,7 @@ Feature: user should be able to create repetitive calendar events
   @B31G6-240
   Scenario Outline: user should see “This value should not be blank.” error message when Days space is empty
     When the user logged in as "<userType>"
-    When user hovers over Activities
+    And user hovers over Activities
     And clicks Calendar Events
     And clicks Create Calendar Event
     And checks the Repeat checkbox
