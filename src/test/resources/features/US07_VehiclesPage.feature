@@ -1,25 +1,42 @@
+@wipUS07
+Feature: As a user (Sales and Store manager),
+  I should be able to select any vehicle from the Vehicles page
 
-Feature: Vehicles page feature
-  User Story:
-  As a user (Sales and Store manager), I should be able to select any vehicle from the Vehicles page (web table)
-  AC #1: Verify that once the users launch on the Vehicles page, the users can see all the checkboxes as unchecked.
-  AC #2: Verify that users can check the first checkbox to select all the cars
-  AC #3: Verify that users can select any car
 
-  Background:
+  Background: User is already in the log in page
     Given the user is on the login page
 
 
-  Scenario: Search result vehicles page verification
-    Given user is on the main page
-    When user selects Vehicles page
-    Then user can see all checkboxes as unchecked
+  Scenario Outline: Verify that once the <userType> launch on the Vehicles page,
+  the users can see all the checkboxes as unchecked.
+    When the user logged in as "<userType>"
+    And the user navigates to "Fleet" to "Vehicles"
+    Then the user should be able to see all the checkboxes as "unchecked"
+    Examples:
+      | userType      |
+      | store_manager |
+      | sales_manager |
 
-  @wipUS#07
-    Scenario: Checkbox verification for all the cars
-      Given user is on the Vehicles page
-      Then user can check the first checkbox to select all the cars
 
-    Scenario: Verify that users can select any car
-      Given user is on the Vehicles page
-      Then user can select any car
+
+  Scenario Outline: Verify that <userType> can check the first checkbox to select all the cars
+    When the user logged in as "<userType>"
+    And the user navigates to "Fleet" to "Vehicles"
+    And the user select the all cars
+    Then the user should be able to see all the checkboxes as "checked"
+    Examples:
+      | userType      |
+      | store_manager |
+      | sales_manager |
+
+
+
+  Scenario Outline: Verify that <userType> can select any car
+    When the user logged in as "<userType>"
+    And the user navigates to "Fleet" to "Vehicles"
+    And the user select any car 5
+    Then the user should be able to see car as "checked"
+    Examples:
+      | userType      |
+      | store_manager |
+      | sales_manager |
