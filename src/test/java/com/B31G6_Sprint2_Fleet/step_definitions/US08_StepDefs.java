@@ -30,13 +30,14 @@ public class US08_StepDefs extends HomePage {
 
     @When("clicks Calendar Events")
     public void clicks_calendar_events() {
-        actions.moveToElement(this.calendarEvents).click().perform();
-        BrowserUtils.sleep(15);
+       this.calendarEvents.click();
+
     }
 
     @When("clicks Create Calendar Event")
     public void clicks_create_calendar_event() {
-        calendarEventsPage.createCalendarEvent.click();
+       BrowserUtils.sleep(5);
+      calendarEventsPage.createCalendarEvent.click();
     }
 
     @When("checks the Repeat checkbox")

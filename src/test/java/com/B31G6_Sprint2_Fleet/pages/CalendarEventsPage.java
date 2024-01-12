@@ -11,7 +11,7 @@ public class CalendarEventsPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//a[@title='Create Calendar event']")
+    @FindBy (xpath = "//a[@class='btn main-group btn-primary pull-right ']")
     public WebElement createCalendarEvent;
 
 
