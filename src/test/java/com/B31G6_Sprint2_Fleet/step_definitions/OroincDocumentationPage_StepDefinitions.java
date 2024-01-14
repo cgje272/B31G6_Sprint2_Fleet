@@ -13,17 +13,16 @@ import java.time.Duration;
 import java.util.List;
 
 public class OroincDocumentationPage_StepDefinitions extends HomePage {
-    LoginPage loginPage=new LoginPage();
-
-
+    LoginPage loginPage = new LoginPage();
 
 
     @When("user login with below credentials {string},{string}")
     public void user_login_with_below_credentials(String string, String string2) {
-     Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    loginPage.login(string,string2);
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        loginPage.login(string, string2);
 
     }
+
     @When("user clicks on the question mark icon")
     public void user_clicks_on_the_question_mark_icon() {
 
@@ -36,11 +35,10 @@ public class OroincDocumentationPage_StepDefinitions extends HomePage {
     public void newPageUrlShouldBeHttpsDocOroincCom() {
         for (String each : Driver.getDriver().getWindowHandles()) {
             Driver.getDriver().switchTo().window(each);
-            }
-        String expectedURL="https://doc.oroinc.com/";
-        String actualURL=Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expectedURL,actualURL);
-
+        }
+        String expectedURL = "https://doc.oroinc.com/";
+        String actualURL = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedURL, actualURL);
 
     }
 }
