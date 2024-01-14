@@ -4,9 +4,7 @@ import com.B31G6_Sprint2_Fleet.pages.HomePage;
 import com.B31G6_Sprint2_Fleet.pages.LoginPage;
 import com.B31G6_Sprint2_Fleet.pages.VehicleModelPage;
 import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
-import com.B31G6_Sprint2_Fleet.utilities.ConfigurationReader;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -14,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
-public class VehicleModelPage_US05_Joana extends HomePage {
+public class US05_StepDefs extends HomePage {
 
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
