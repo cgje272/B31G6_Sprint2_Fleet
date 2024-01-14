@@ -2,13 +2,11 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 
 
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
-import com.B31G6_Sprint2_Fleet.pages.US07_VehiclesPage;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.http.Contents;
+
 
 public class US07_VehiclesPageStepDef extends HomePage {
 
@@ -16,6 +14,11 @@ public class US07_VehiclesPageStepDef extends HomePage {
     @Given("the user is on the login page")
     public void theUserIsOnTheLoginPage() {
         Driver.getDriver().get("https://qa.xfleetsolutions.com/user/login");
+    }
+
+    @When("the user logged in as {string}")
+    public void theUserLoggedInAs(String arg0) {
+
     }
 
 
@@ -51,7 +54,6 @@ public class US07_VehiclesPageStepDef extends HomePage {
     public void the_user_should_be_able_to_see_car_as(String string) {
 
     }
-
 }
 
 
