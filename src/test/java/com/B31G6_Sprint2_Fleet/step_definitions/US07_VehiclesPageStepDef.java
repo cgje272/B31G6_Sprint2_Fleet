@@ -9,20 +9,17 @@ import org.openqa.selenium.remote.http.Contents;
 
 public class US07_VehiclesPageStepDef extends HomePage {
 
-    @Given("the user is on the login page")
-    public void the_user_is_on_the_login_page() {
 
-    }
-    @When("the user logged in as {string}")
-    public void the_user_logged_in_as(String string) {
 
-    }
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
+        fleet.click();
+        vehicles.click();
 
     }
     @When("the user select the all cars")
     public void the_user_select_the_all_cars() {
+
 
     }
 
