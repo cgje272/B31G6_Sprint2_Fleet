@@ -25,14 +25,16 @@ public class US05_StepDefs extends HomePage {
         BrowserUtils.sleep(10);
         actions.moveToElement(this.fleet).perform();
         actions.moveToElement(vehicleModelPage.vehiclesModelButton).click().perform();
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(10);
     }
 
     @Then("the page should display exactly below columns with the following names:")
     public void the_page_should_display_exactly_columns_with_the_following_names(List<String> expectedColumns) {
+        BrowserUtils.sleep(10);
         List<String> actualVehiclesModelColumns = BrowserUtils.getElementsText(vehicleModelPage.actualVehiclesModelColumns);
         System.out.println("actualVehiclesModelColumns = " + actualVehiclesModelColumns);
         System.out.println("expectedColumns = " + expectedColumns);
+
         actualVehiclesModelColumns.removeIf(k->k.isBlank());
         Set<String> strings = new LinkedHashSet<>(actualVehiclesModelColumns);
         Assert.assertEquals(expectedColumns, new LinkedList<>(strings));
@@ -51,6 +53,7 @@ public class US05_StepDefs extends HomePage {
     public void theUserNavigatesToVehiclesModelPage() {
         BrowserUtils.sleep(10);
         actions.moveToElement(vehicleModelPage.fleetIconForDriver).perform();
+        BrowserUtils.sleep(10);
         actions.moveToElement(vehicleModelPage.vehiclesModelButtonForDriver).click().perform();
         BrowserUtils.sleep(5);
     }
