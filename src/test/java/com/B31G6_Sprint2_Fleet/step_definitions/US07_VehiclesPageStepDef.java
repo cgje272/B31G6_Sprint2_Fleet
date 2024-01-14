@@ -2,6 +2,7 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 
 
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
+import com.B31G6_Sprint2_Fleet.pages.US07_VehiclesPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,8 +18,10 @@ public class US07_VehiclesPageStepDef extends HomePage {
         vehicles.click();
 
     }
+
     @When("the user select the all cars")
     public void the_user_select_the_all_cars() {
+
 
 
     }
