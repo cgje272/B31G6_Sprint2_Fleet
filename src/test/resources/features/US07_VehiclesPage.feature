@@ -14,8 +14,8 @@ Feature: As a user (Sales and Store manager),
     Then the user should be able to see all the checkboxes as "unchecked"
     Examples:
       | userType      |
-      | store_manager |
-      | sales_manager |
+      | store manager |
+      | sales manager |
 
 
 
@@ -26,8 +26,8 @@ Feature: As a user (Sales and Store manager),
     Then the user should be able to see all the checkboxes as "checked"
     Examples:
       | userType      |
-      | store_manager |
-      | sales_manager |
+      | store manager |
+      | sales manager |
 
 
 
@@ -38,5 +38,5 @@ Feature: As a user (Sales and Store manager),
     Then the user should be able to see car as "checked"
     Examples:
       | userType      |
-      | store_manager |
-      | sales_manager |
+      | store manager |
+      | sales manager |
