@@ -2,6 +2,9 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 
 
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
+import com.B31G6_Sprint2_Fleet.pages.LoginPage;
+import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
+import com.B31G6_Sprint2_Fleet.utilities.ConfigurationReader;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,18 +25,24 @@ public class US07_VehiclesPageStepDef extends HomePage {
         String username =null;
         String password =null;
 
-
-
-
-
+        if(userType.equalsIgnoreCase("driver")){
+            username = ConfigurationReader.getProperty("driver_username");
+            password = ConfigurationReader.getProperty("driver_password");
+        }else if(userType.equalsIgnoreCase("sales manager")){
+            username = ConfigurationReader.getProperty("sales_manager_username");
+            password = ConfigurationReader.getProperty("sales_manager_password");
+        }else if(userType.equalsIgnoreCase("store manager")){
+            username = ConfigurationReader.getProperty("store_manager_username");
+            password = ConfigurationReader.getProperty("store_manager_password");
+        }
+        //send username and password and login
+        new LoginPage().login(username,password);
     }
-
 
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
         fleet.click();
         vehicles.click();
-
     }
 
     @When("the user select the all cars")

@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features="src/test/resources/features",
         glue="com/B31G6_Sprint2_Fleet/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@wipUS07",
         publish = true
 )
