@@ -12,7 +12,7 @@ public class US07_VehiclesPage {
 
      }
 
-     @FindBy(id = "")
+     @FindBy( = "")
      public WebElement checkbox;
 
 

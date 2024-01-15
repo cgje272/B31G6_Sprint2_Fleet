@@ -49,16 +49,15 @@ public class US07_VehiclesPageStepDef extends HomePage {
 
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
-        BrowserUtils.sleep(10);
+        BrowserUtils.sleep(5);
         actions.moveToElement(this.fleet).perform();
         actions.moveToElement(this.vehicles).click().perform();
-        BrowserUtils.sleep(10);
+        BrowserUtils.sleep(5);
     }
-
 
     @When("the user select the all cars")
     public void the_user_select_the_all_cars() {
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitFor(5);
         vehiclesPage.checkbox.click();
 
     }
