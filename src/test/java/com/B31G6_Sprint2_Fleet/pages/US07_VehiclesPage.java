@@ -12,13 +12,8 @@ public class US07_VehiclesPage {
 
      }
 
-     @FindBy(xpath = "//*[@id=\"grid-custom-entity-grid-1425551294\"]/div[2]/div[2]/div[2]/div/table/thead/tr/th[1]/div/button/input")
+     @FindBy(id = "")
      public WebElement checkbox;
 
-     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
-    public WebElement fleetUS07;
-
-     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")
-    public WebElement vehiclesUS07;
 
 }
