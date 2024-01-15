@@ -42,6 +42,7 @@ public class US07_VehiclesPageStepDef extends HomePage {
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
         fleet.click();
+
         vehicles.click();
     }
 
