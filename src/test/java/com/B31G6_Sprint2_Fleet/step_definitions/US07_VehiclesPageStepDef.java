@@ -16,8 +16,13 @@ public class US07_VehiclesPageStepDef extends HomePage {
         Driver.getDriver().get("https://qa.xfleetsolutions.com/user/login");
     }
 
-    @When("the user logged in as {string}")
-    public void theUserLoggedInAs(String arg0) {
+    @Given("the user logged in as {string}")
+    public void the_user_logged_in_as(String userType) {
+        //based on input enter that user information
+        String username =null;
+        String password =null;
+
+
 
 
 
