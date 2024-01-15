@@ -64,6 +64,8 @@ public class US07_VehiclesPageStepDef extends HomePage {
 
     @When("the user select any car {int}")
     public void the_user_select_any_car(Integer int1) {
+        BrowserUtils.waitFor(5);
+        vehiclesPage.
 
 
     }
