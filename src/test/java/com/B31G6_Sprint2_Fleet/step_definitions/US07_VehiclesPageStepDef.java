@@ -3,15 +3,19 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
 import com.B31G6_Sprint2_Fleet.pages.LoginPage;
+import com.B31G6_Sprint2_Fleet.pages.US07_VehiclesPage;
 import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
 import com.B31G6_Sprint2_Fleet.utilities.ConfigurationReader;
 import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
 
 
 public class US07_VehiclesPageStepDef extends HomePage {
+
+    US07_VehiclesPage vehiclesPage = new US07_VehiclesPage();
 
 
     @Given("the user is on the login page")
@@ -41,17 +45,17 @@ public class US07_VehiclesPageStepDef extends HomePage {
 
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
-        fleet.click();
-
-        vehicles.click();
+       BrowserUtils.waitForClickablility(this.fleet, 10);
+        this.fleet.click();
+        BrowserUtils.waitForClickablility(this.vehicles, 10);
+        this.vehicles.click();
     }
+
 
     @When("the user select the all cars")
     public void the_user_select_the_all_cars() {
-
-
-
-
+        BrowserUtils.waitFor(10);
+        vehiclesPage.checkbox.click();
 
     }
 
