@@ -10,7 +10,9 @@ import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class US07_VehiclesPageStepDef extends HomePage {
@@ -43,12 +45,13 @@ public class US07_VehiclesPageStepDef extends HomePage {
         new LoginPage().login(username,password);
     }
 
+    Actions actions = new Actions(Driver.getDriver());
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
-       BrowserUtils.waitForClickablility(this.fleet, 10);
-        this.fleet.click();
-        BrowserUtils.waitForClickablility(this.vehicles, 10);
-        this.vehicles.click();
+        BrowserUtils.sleep(10);
+        actions.moveToElement(this.fleet).perform();
+        actions.moveToElement(this.vehicles).click().perform();
+        BrowserUtils.sleep(10);
     }
 
 
