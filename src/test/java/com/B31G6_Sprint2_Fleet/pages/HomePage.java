@@ -20,7 +20,7 @@ public abstract class HomePage {
     public WebElement dashboard;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[2]")
     public WebElement manageDashboard;
-    @FindBy (xpath = "//span[contains(@class, 'title title-level-1') and contains(text(), 'Fleet')]")
+    @FindBy (xpath = "//span[@class='title title-level-1'][normalize-space()='Fleet']")
     public WebElement  fleet;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[3]")
     public WebElement vehicles;
@@ -28,8 +28,11 @@ public abstract class HomePage {
     public WebElement vehicleOdometer;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[5]")
     public WebElement vehicleCosts;
-    @FindBy (xpath = "(//span[@class='title title-level-2'])[6]")
+    @FindBy (xpath = "//span[normalize-space()='Vehicle Contracts']")
     public WebElement vehicleContract;
+
+    @FindBy(xpath = "//div[normalize-space()='You do not have permission to perform this action.']")
+    public WebElement errorMsgDriver;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[7]")
     public WebElement fuelLogs;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[8]")
