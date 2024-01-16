@@ -25,6 +25,7 @@ public class US08_StepDefs extends HomePage {
 
     @When("user hovers over Activities")
     public void user_hovers_over_activities() {
+        waitUntilLoaderScreenDisappear();
         actions.moveToElement(this.activities).perform();
     }
 
