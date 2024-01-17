@@ -3,7 +3,6 @@ Feature: Default
 
 	
 	@B31G6-253
-	Scenario Outline: Verify filter options are available
 		Scenario Outline: Verify filter options are available
 		    Given the user logged in as "<userType>"
 		    When user clicks on Customers
