@@ -18,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 public class US07_VehiclesPageStepDef extends HomePage {
 
     US07_VehiclesPage vehiclesPage = new US07_VehiclesPage();
+    Actions actions = new Actions(Driver.getDriver());
 
 
     @Given("the user is on the login page")
@@ -45,39 +46,43 @@ public class US07_VehiclesPageStepDef extends HomePage {
         new LoginPage().login(username,password);
     }
 
-    Actions actions = new Actions(Driver.getDriver());
 
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
-        BrowserUtils.sleep(5);
-        actions.moveToElement(this.fleet).perform();
-        actions.moveToElement(this.vehicles).click().perform();
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(10);
+        actions.moveToElement(fleet).perform();
+        actions.moveToElement(vehicles).click().perform();
+        BrowserUtils.sleep(10);
+    }
+
+    @Then("the user should be able to see all the checkboxes as {string}")
+    public void the_user_should_be_able_to_see_all_the_checkboxes_as(String string) {
+        vehiclesPage.checkbox.isSelected();
+
     }
 
     @When("the user select the all cars")
     public void the_user_select_the_all_cars() {
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitFor(10);
         vehiclesPage.checkbox.click();
+        vehiclesPage.checkbox.isSelected();
 
     }
 
     @When("the user select any car {int}")
     public void the_user_select_any_car(Integer int1) {
-        BrowserUtils.waitFor(5);
-        vehiclesPage.
+        BrowserUtils.waitFor(10);
+        vehiclesPage.vehicle5.click();
 
 
-    }
-
-    @Then("the user should be able to see all the checkboxes as {string}")
-    public void the_user_should_be_able_to_see_all_the_checkboxes_as(String string) {
 
     }
 
 
     @Then("the user should be able to see car as {string}")
-    public void the_user_should_be_able_to_see_car_as(String string) {
+    public void theUserShouldBeAbleToSeeCarAs(String arg0) {
+        BrowserUtils.waitFor(10);
+        vehiclesPage.vehicle5.isSelected();
 
     }
 }
