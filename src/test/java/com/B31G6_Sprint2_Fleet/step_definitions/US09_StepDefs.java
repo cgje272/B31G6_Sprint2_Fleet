@@ -1,7 +1,4 @@
 package com.B31G6_Sprint2_Fleet.step_definitions;
-
-import com.B31G6_Sprint2_Fleet.pages.CalendarEventsPage;
-import com.B31G6_Sprint2_Fleet.pages.CreateCalendarEventPage;
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
 import com.B31G6_Sprint2_Fleet.pages.US09_CalendarEventPage;
 import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
