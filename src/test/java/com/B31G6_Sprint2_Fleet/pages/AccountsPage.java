@@ -13,7 +13,7 @@ public class AccountsPage {
     }
 
     @FindBy (xpath = "//div[@class='filter-item oro-drop']/div[1]")
-    public List<WebElement> filters;
+    public List<WebElement> filtersList;
     @FindBy (xpath = "//a[@class='action btn mode-icon-only']")
     public WebElement filtersBtn;
 

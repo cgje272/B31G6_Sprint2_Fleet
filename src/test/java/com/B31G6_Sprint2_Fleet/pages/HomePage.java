@@ -36,7 +36,7 @@ public abstract class HomePage {
     public WebElement serviceLogs;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[9]")
     public WebElement model;
-    @FindBy (xpath = "//span[contains(@class, 'title title-level-1') and contains(text(), 'Customers')]")
+    @FindBy (xpath = "(//span[@class='title title-level-1'])[3]")
     public WebElement  customers;
     @FindBy (xpath = "(//span[@class='title title-level-2'])[10]")
     public WebElement  accounts;

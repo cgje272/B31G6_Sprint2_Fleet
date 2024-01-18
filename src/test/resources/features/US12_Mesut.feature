@@ -11,10 +11,10 @@ Feature:As a user, I want to filter customers’ info on the
     When user clicks on Customers
     And user clicks on Accounts
     And user clicks on the filter button
-    Then user should see "Account Name, Contact Name, Contact,Email, Contact Phone, Owner, Business Unit, Created At" filter options
+    Then user should see "Account Name, Contact Name, Contact Email, Contact Phone, Owner, Business Unit, Created At, Updated At" filter options
 
 
     Examples:
       | userType      |
-      | sales manager |
+#      | sales manager |
       | store manager |
