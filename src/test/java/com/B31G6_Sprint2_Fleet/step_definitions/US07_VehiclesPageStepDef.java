@@ -50,9 +50,9 @@ public class US07_VehiclesPageStepDef extends HomePage {
     @When("the user navigates to {string} to {string}")
     public void the_user_navigates_to_to(String string, String string2) {
         BrowserUtils.sleep(10);
-        actions.moveToElement(fleet).perform();
-        actions.moveToElement(vehicles).click().perform();
-        BrowserUtils.sleep(10);
+        actions.moveToElement(this.fleet).perform();
+        vehicles.click();
+
     }
 
     @Then("the user should be able to see all the checkboxes as {string}")
