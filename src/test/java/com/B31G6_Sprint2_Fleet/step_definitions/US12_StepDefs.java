@@ -3,19 +3,9 @@ package com.B31G6_Sprint2_Fleet.step_definitions;
 import com.B31G6_Sprint2_Fleet.pages.AccountsPage;
 import com.B31G6_Sprint2_Fleet.pages.HomePage;
 import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
-import com.B31G6_Sprint2_Fleet.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v114.fedcm.model.Account;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
