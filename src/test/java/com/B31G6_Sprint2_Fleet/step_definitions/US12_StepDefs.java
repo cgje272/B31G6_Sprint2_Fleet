@@ -6,6 +6,8 @@ import com.B31G6_Sprint2_Fleet.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,13 +40,15 @@ public class US12_StepDefs extends HomePage {
         waitUntilLoaderScreenDisappear();
         BrowserUtils.sleep(2);
 
+        List<String> expected=new ArrayList<>();
+        expected.add(expectedFilters);
+
 //        String expectedFilters="Account Name, Contact Name, Contact,Email, Contact Phone, Owner, Business Unit, Created At";
 //        List<String> expectedFilters =Arrays.stream(filters.split(",")).collect(Collectors.toList());
 //        List<String> actualFiltersList= page.filters.stream().map(k ->k.trim().substring(0,k.indexOf(":"))).collect(Collectors.toList());
-        List<String> actualFiltersList=BrowserUtils.getElementsText(page.filtersList);
-         actualFiltersList= actualFiltersList.stream().map(k ->k.trim().substring(0,k.indexOf(":"))).collect(Collectors.toList());
+        List<String> actualFiltersList=BrowserUtils.getElementsText(page.filtersList).stream().map(k ->k.trim().substring(0,k.indexOf(":"))).collect(Collectors.toList());
 
-        Assert.assertEquals(expectedFilters,actualFiltersList);
+        Assert.assertEquals(expected,actualFiltersList);
 
 //        List<String> expected= List.of(filters.split(","));
 //
